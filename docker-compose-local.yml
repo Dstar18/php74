@@ -1,0 +1,17 @@
+version: '2'
+networks:
+  public:
+    external:
+      name: default-env_public
+
+services:
+  nginx:
+    container_name: php74
+    build:
+      context: ./
+    volumes:
+      - ./public_html/:/home/clientsite/public_html/
+    networks:
+      public:
+        ipv4_address: 172.23.0.46
+ 
